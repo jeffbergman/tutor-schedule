@@ -10,9 +10,13 @@ You can check it out at https://schedule-demo.now.sh/
 Here are the logins for it...
 
 jeff@example.com pwd: jeff (admin user)
+
 harrym@example.com pwd: harry
+
 zoe@example.com pwd: zoe
+
 sarahm@example.com pwd: sarah
+
 
 
 
