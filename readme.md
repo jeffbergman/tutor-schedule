@@ -9,12 +9,10 @@ You can check it out at https://schedule-demo.now.sh/
 
 Here are the logins for it...
 
-|Name|Email (login)|Password|admin
-|---|---|---|
-|Jeff Bergman|jeff@example.com|jeff|yes
-|Harry Michaelson|harrym@example.com|harry|no
-|Zoe Carris|zoe@example.com|zoe|no
-|Sarah Miller|sarahm@example.com|sarah|no
+jeff@example.com|jeff|admin
+harrym@example.com|harry|
+zoe@example.com|zoe|
+sarahm@example.com|sarah|
 
 
 
