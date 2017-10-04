@@ -1,0 +1,11 @@
+extends layout
+
+include mixins/_studentCard
+include mixins/_pagination
+
+block content
+	.inner
+		.students
+			each student in students
+				+studentCard(student, 'students')
+		+pagination(page, pages, count)

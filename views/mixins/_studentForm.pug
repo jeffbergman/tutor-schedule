@@ -1,0 +1,58 @@
+mixin studentForm(student = {})
+	form.form-main(action=`/add/${student._id || ''}` method="POST" class="card" enctype="multipart/form-data")
+		div.student-edit
+			div.student__col-left
+				.input-container
+					input(type="text" name="name" required value=student.name)
+					label(for="name") Name
+				.input-container
+					input(type="text" name="currTest" required value=student.currTest)
+					label(for="currTest") Test / Subject
+				
+				//- addr, lng, lat - mongo wants them in that order
+				.input-container
+					input(type="text" id="address" required name="location[address]" 
+						value=(student.location && student.location.address)
+						placeholder="")
+					label(for="address") Address
+					input(type="hidden" id="lng" name="location[coordinates][0]" value=(student.location && student.location.coordinates[0]) required)
+					input(type="hidden" id="lat" name="location[coordinates][1]" value=(student.location && student.location.coordinates[1]) required)
+
+				.input-container
+					input(type="email" name="email" required value=student.email)
+					label(for="email") Email
+				.input-container
+					input(type="text" name="phone" required value=student.phone)
+					label(for="phone") Phone
+
+				.input-container
+					select(name="tutor")
+						if user.admin
+							- const currTutor = student.tutor ? student.tutor.name : ''
+							each tutor in tutors
+								option(value=tutor._id selected=tutor.name === currTutor) #{tutor.name}
+						else
+							option(value=user._id) #{user.name}
+					label(for="tutor") Tutor
+				
+				//- image upload
+				.input-container
+					input(type="file" name="photo" id="photo" 
+								accept="image/gif, image/png, image/jpeg")
+					label(for="photo") Photo
+					if student.photo
+						img(src=`${student.photo}` alt=student.name width=200)
+						
+
+			div.student__col-right
+				.cal-edit
+					label.label--schedule(for="lessons") Schedule
+					- var dates = student.lessons ? student.lessons.toString() : '';
+					input(type="text" name="lessons" class="cal-date" 
+								data-page="edit" data-cal-readonly="false" data-lessons=dates)
+				
+				
+		input.submit(type="submit", value="Submit", class="button")
+
+
+

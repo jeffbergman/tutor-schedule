@@ -1,0 +1,27 @@
+extends layout
+
+include mixins/_noteForm
+include mixins/_note
+include mixins/_studentCard
+
+block content
+	.inner
+		.single
+			.single__col-left
+				+studentCard(student, 'student')
+			.single__col-right
+				.single__map
+					- var strStudents = student ? JSON.stringify(student) : ''
+					div(id="map-single" data-students=strStudents)
+						p Loading Map...
+					
+			.single__leave-note
+				+noteForm(student)
+
+			if student.notes
+				.notes
+					each note in student.notes
+						.note
+							+note(note)
+
+

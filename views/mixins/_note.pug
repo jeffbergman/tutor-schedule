@@ -1,0 +1,9 @@
+mixin note(note)
+	.note__header
+		.note__author
+			
+			p= note.author.name
+		
+		time.note__time(datetime=note.created)= h.moment(note.created).fromNow()
+	.note__body
+		p= note.text

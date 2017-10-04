@@ -1,0 +1,32 @@
+### This .gitignore is for now.sh
+### For github, we must uncomment /public/dist and /public/uploads
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+#/public/dist
+
+#pics uploaded to the app
+#/public/uploads
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+variables.env
+variables.env.now
+.idea
+
+# notes to myself
+*.pages
+

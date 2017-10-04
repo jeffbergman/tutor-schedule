@@ -1,0 +1,53 @@
+.single {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: white;
+  padding: 5rem;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+  margin-top: 100px;
+  &__col-left {
+    width: 49%; 
+    margin-right: 5px;
+    display: flex;
+    @media all and (max-width: 850px) {
+      width: 100%; 
+      margin-right: 0;
+    }
+  }
+  &__col-right {
+    width: 49%; 
+    margin-left: 5px;
+    @media all and (max-width: 850px) {
+      width: 100%; 
+      margin-left: 0;
+    }
+  }
+  &__map {
+    box-shadow: $shad;
+    background-color: $red;
+    padding: 7px;
+    height: 287px;
+    margin-bottom: 55px;
+    
+  }
+  &__leave-note {
+    box-shadow: $shad;
+    border-left: 4px solid $darkblue;
+    width: 100%;
+    margin-bottom: 20px;
+
+  }
+
+  
+
+  @media all and (max-width: 550px) {
+    margin-top: 55px;
+  }
+  
+}
+
+
+
+
+

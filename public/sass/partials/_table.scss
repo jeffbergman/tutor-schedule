@@ -1,0 +1,32 @@
+.table {
+  font-size: 2rem;
+  padding: 10px;
+  width: 100%;
+  td {
+    padding: 5px;
+    padding-bottom: 13px;
+    padding-right: 15px;
+    font-family: 'Montserrat', sans-serif; 
+    
+    &:last-child {
+      
+      padding-right: 10px;
+    }
+    
+  }
+  
+  
+  thead tr {
+    background: $black;
+    color: white;
+  }
+  
+  
+  
+  @media all and (max-width: 510px) {
+    padding-left: 0;
+    font-size: 1.6rem;
+  }
+  
+  
+}

@@ -1,0 +1,118 @@
+input, textarea, select {
+  /*
+  width:100%;
+  padding:10px;
+  border: 1px solid $grey;
+  */
+  &.input {
+    &--error {
+      border-color: red;
+    }
+  }
+  &.submit {
+    margin-top: 20px;
+    width:100%;
+    padding:10px;
+    border: 1px solid $grey;
+  }
+  
+}
+
+
+
+div.date {
+  flex: 3 0 0;
+}
+
+div.time {
+  flex: 1 0 0;
+}
+
+label {
+  padding: 10px 0;
+  display: block;
+}
+
+.label--schedule {
+  color: $darkblue;
+  font-size: 14px;
+
+} 
+
+.cal-date {
+  display: none;
+}
+
+.cal-edit {
+  margin-bottom: 30px;
+}
+
+.form {
+  background: white;
+  padding: 2rem;
+  box-shadow: $grad;
+  & + .form {
+    margin-top: 4rem;
+  }
+  /*I know this isn't bem... */
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $grey;
+  }
+}
+
+.form-main {
+  .input-container {
+    position: relative;
+    margin-bottom: 40px;
+    input, select {
+      outline: none;
+      z-index: 1; 
+      position: relative;
+      background: none;
+      width: 100%;
+      padding: 10px 10px 5px 5px;
+      border: 0;
+      border-bottom: 2px solid $darkblue;
+      color: $black;
+      font-size: 18px;
+      font-weight: 400;
+      &:focus ~ label, &:valid ~ label {
+        color: $darkblue;
+        top: -20px;
+        font-size: 14px;  
+      }
+    }
+    select {
+      height: 42px;
+    }
+    label {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      padding: 0;
+      color: #757575;
+      font-size: 16px;
+      font-weight: 400;
+      transition: 0.2s ease;  
+    }
+  }
+  &--account {
+    margin-top: 4rem;
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+      padding-bottom: 1rem;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid $grey;
+    }
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }  
+  }
+
+
+}

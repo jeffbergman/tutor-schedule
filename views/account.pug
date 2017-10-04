@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	.inner
+		
+		form.form-main.form-main--account.card(action="/account" method="POST")
+			h2 Edit Your Account
+			.input-container
+				input(type="text" name="name" value=user.name)
+				label(for="name") Name
+			.input-container
+				input(type="email" name="email" value=user.email)
+					
+				label(for="email") Email
+			
+			input.button.submit(type="submit" value="Update My Account")
+
+

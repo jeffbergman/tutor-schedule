@@ -1,0 +1,18 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #F5F3F2;
+  
+}
+
+.inner {
+  max-width:900px;
+  margin: 0 auto;
+  @media all and (max-width: 900px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+

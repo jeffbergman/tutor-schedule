@@ -1,0 +1,134 @@
+.students {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  margin-top: 100px;
+  &__title {
+    margin-bottom: 35px;
+  }
+  @media all and (max-width: 550px) {
+    margin-top: 55px;
+  }
+}
+
+.student {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: $lightblue;
+  margin: 55px 0;
+  width:30%;
+  box-shadow: $shad;
+  /*
+  &--wide {
+    width: 100%;
+    @media all and (max-width: 850px) {
+      width: 100%;
+    }
+  }
+  */
+  &__details {
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    /*padding: 2rem;*/
+    p, div {
+      font-family: inherit;
+      font-size: 1.4rem;
+      color: #fff;  
+    }
+    
+  }
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: -48px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 -3px 3px rgba(0,0,0,0.1);
+    display: block;
+  }
+  &__hero {
+    text-align: center;  
+  }
+  &__title {
+    margin: 20px auto;
+    color: $black;
+    max-width: 90%;
+  }
+  &__name-anchor {
+    text-decoration: none;
+    color: #fff;
+    &:hover {
+      color: #d46a6a;
+    }
+  }
+  &__col-left {
+    flex-grow: 2;
+    margin-top: 30px; 
+  }
+  &__col-right {
+    margin-left: 30px;  
+    @media all and (max-width: 820px) {
+      margin-left: 0
+
+    }
+  }
+  &__admin {
+    margin-top: 20px;
+    padding-top: 30px;
+
+  }
+
+  
+  @media all and (max-width: 850px) {
+    width: 48%;
+  }
+  @media all and (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.student--wide {
+  width: 100%;
+  @media all and (max-width: 850px) {
+    width: 100%;
+  }
+}
+
+
+.student__action {
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  text-align: right;
+  padding: 10px 0;
+  &__filler {
+    height: 18px;
+  }
+  svg {
+    width: 15px;
+    fill: #fff;
+    /*fill: $lightblue;*/
+    &:hover {
+      fill: #d46a6a;
+    }
+  }
+  &--edit {
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+
+.student-edit {
+  display: flex;
+  justify-content: space-between;
+  @media all and (max-width: 820px) {
+    flex-wrap: wrap;
+    
+  }
+}
+
+

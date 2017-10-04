@@ -1,0 +1,40 @@
+extends layout
+
+block content
+	.inner
+		h3.page-heading
+		.card.card--wide
+			.sched__tutor-select-outer-div
+				if (tutors)
+					.sched__tutor-select-inner-div
+						label.sched__tutor-select-label(for="tutor") Schedule for: 
+						select.sched__tutor-select(name="tutor" value=user._id)
+							each tutor, i in tutors
+								option(value=tutor._id selected=tutor.name === user.name) #{tutor.name}
+			
+			.sched.sched__top
+				div.sched__table
+					table.table
+						each student in students
+							tr
+								td= `${h.moment(student.lessonLocal).format("h:mm a")}`
+								td 
+									a(href=`/students/${student.slug}`)
+										- let photo = student.photo || '/uploads/generic.png';
+										img.avatar(src=`${photo}`)
+								td: a(href=`/students/${student.slug}`)= student.name
+								td= student.test
+						else
+							tr 
+								td No students scheduled
+					
+			
+				- var dates = lessonDates ? lessonDates.toString() : '';
+				input(type="text" name="lessons" class="cal-date" 
+							data-page="schedule" data-cal-readonly="true" data-lessons=dates)
+			
+			- var strStudents = students.length ? JSON.stringify(students) : ''
+			div(id="map" data-students=strStudents)
+				p Loading Map...
+			
+			

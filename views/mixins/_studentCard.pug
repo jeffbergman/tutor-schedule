@@ -1,0 +1,38 @@
+mixin studentCard(student = {}, context = 'student')
+	- const topClass = context === 'students' ? 'student' : 'student student--wide'; 
+	div(class=topClass)
+		.student__hero
+			
+			a.student__name-anchor(href=`/students/${student.slug}`)
+				- let photo = student.photo || '/uploads/generic.png';
+				img.student__avatar(src=`${photo}`)
+			h3.student__title
+				a.student__name-anchor(href=`/students/${student.slug}`) #{student.name}
+			
+		.student__details
+			if context === 'students'
+				div= `Tutor: ${student.tutor.name}`
+				div= `Subject: ${student.currTest}`
+
+				- let nextLesson = student.nextLessonLocal;
+				- let display = nextLesson ? h.moment(nextLesson).format("ddd, MMM Do, h:mm A") : 'No upcoming lessons';
+				
+				div= `Next appt: ${display}`
+
+			if context === 'student'
+				//- don't show state, country. a kludge that should work if addresses are in the US
+				- let addr = student.location.address.substr(0, student.location.address.length - 19)
+				div.text-center= addr
+				div.text-center= student.email
+				div.text-center= student.phone
+			
+			
+			.student__action.student__action--edit
+				if (user)
+					if (user.admin || user.name === student.tutor.name)
+						a(href=`/students/${student._id}/edit`)
+							!= h.icon('pencil')
+				else 
+					.student__action__filler
+		
+			

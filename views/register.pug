@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	.inner
+		form.form-main.form-main--account.card(action="/register" method="POST")
+			h2 Register
+			.input-container
+				input(type="text" name="name" required)
+				label(for="name") Name
+			.input-container
+				input(type="email" name="email" required)
+				label(for="email") Email
+			.input-container
+				input(type="password" name="password" required)
+				label(for="password") Password
+			.input-container
+				input(type="password" name="password-confirm" required)
+				label(for="password-confirm") Confirm Password
+				
+			input.button.submit(type="submit" value="Register")
+
+		

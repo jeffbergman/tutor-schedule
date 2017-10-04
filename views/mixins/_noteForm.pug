@@ -1,0 +1,12 @@
+mixin noteForm(student)
+	form.note-form(action=`/notes/${student._id}` method="POST")
+		if (user)
+			if (user.admin || user.name === student.tutor.name) 
+				textarea(name="text" placeholder="Leave a note here...")
+				input.button.submit(type="submit" value="Submit Note")
+			else 
+				textarea.disabled(name="text" placeholder="Only a student's tutor, and admins, can leave a note..." disabled)
+				input.button.submit.disabled(type="submit" value="Submit Note" disabled)
+		else
+			textarea.disabled(name="text" placeholder="Only a student's tutor, and admins, can leave a note..." disabled)
+			input.button.submit.disabled(type="submit" value="Submit Note" disabled) 

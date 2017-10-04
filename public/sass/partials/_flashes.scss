@@ -1,0 +1,57 @@
+
+
+.flash {
+  background: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px;
+  display: flex;
+  
+  &__text {
+    flex: 1;
+  }
+  &__remove {
+    background: none;
+    border:0;
+    &:hover {
+      color: $yellow;
+    }
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    background: white;
+    position: absolute;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: 8px;
+    z-index: -1;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+    border-radius: 3px;
+  }
+  
+  &:first-of-type {
+    margin-top: 2rem;
+  }
+
+
+  &--success {
+    background: #00C851;
+  }
+  &--error {
+    background: #ff4444;
+  }
+  &--info {
+    background: #ffbb33;
+  }
+  
+  
+  p {
+    margin: 0;
+  }
+}

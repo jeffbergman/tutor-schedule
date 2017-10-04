@@ -1,0 +1,10 @@
+mixin loginForm()
+	form.form-main.form-main--account.card(action="/login", method="POST")
+		h2 Login
+		.input-container
+			input(type="email" name="email" required)
+			label(for="email") Email
+		.input-container
+			input(type="password" name="password" required)
+			label(for="password") Password
+		input.button.submit(type="submit" value="Log In")
