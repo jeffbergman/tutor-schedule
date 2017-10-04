@@ -1,11 +1,20 @@
 
+Create clients, schedule them, assign them to an employee, leave notes, see their location on a map. It's set up for a test prep company but obviously can be modified for any similar situation.
 
-|Name|Email (login)|Password|
+Built with Node, Express, Mongodb, & Pug.
+
+Log in as an admin user to create clients, schedule them, and leave notes for all employees, or a regular user to create clients, schedule, and notes for oneself. All users, and non-logged in user, can view client info.
+
+You can check it out at https://schedule-demo.now.sh/
+
+Here are the logins for it...
+
+|Name|Email (login)|Password|admin
 |---|---|---|
-|Jeff Bergman|jeff@example.com|jeff| - admin login
-|Harry Michaelson|harrym@example.com|harry|
-|Zoe Carris|zoe@example.com|zoe|
-|Sarah Miller|sarahm@example.com|sarah|
+|Jeff Bergman|jeff@example.com|jeff|yes
+|Harry Michaelson|harrym@example.com|harry|no
+|Zoe Carris|zoe@example.com|zoe|no
+|Sarah Miller|sarahm@example.com|sarah|no
 
 
 
